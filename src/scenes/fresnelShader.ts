@@ -122,7 +122,7 @@ export class FresnelShaderScene implements CreateSceneClass {
     shadowGenerator.blurScale = 2;
     shadowGenerator.setDarkness(0.2);
 
-    shadowGenerator.getShadowMap()?.renderList?.push(sphere);
+    shadowGenerator.getShadowMap()!.renderList!.push(sphere);
 
     return scene;
   };

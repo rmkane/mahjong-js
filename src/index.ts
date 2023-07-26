@@ -3,15 +3,16 @@ import { WebGPUEngine } from "@babylonjs/core/Engines/webgpuEngine";
 import { getSceneModuleWithName } from "./createScene";
 import "@babylonjs/core/Engines/WebGPU/Extensions/engine.uniformBuffer";
 
-const getModuleToLoad = (): string | undefined =>
-  location.search.split("scene=")[1]?.split("&")[0];
+const getParam = (location: Location, name: string): string | undefined =>
+  new URLSearchParams(location.search).get(name) || undefined;
+
+const getModuleToLoad = (): string | undefined => getParam(location, "scene");
 
 export const babylonInit = async (): Promise<void> => {
   // get the module to load
   const moduleName = getModuleToLoad();
   const createSceneModule = await getSceneModuleWithName(moduleName);
-  const engineType =
-    location.search.split("engine=")[1]?.split("&")[0] || "webgl";
+  const engineType = getParam(location, "engine") || "webgl";
   // Execute the pretasks, if defined
   await Promise.all(createSceneModule.preTasks || []);
   // Get the canvas element
