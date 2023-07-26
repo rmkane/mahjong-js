@@ -41,6 +41,7 @@
     "build:dev": "npx webpack --config webpack.dev.js",
     "build": "npx webpack --config webpack.prod.js",
     "lint": "npx eslint . --ext .ts,.tsx",
+    "lint:fix": "npx eslint --fix . --ext .ts,.tsx",
     "test:visuals": "npx playwright test",
     "test:unit": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest"
   },

@@ -128,6 +128,7 @@ export class NavigationMeshRecast implements CreateSceneClass {
         }
 
         let startingPoint: Vector3 | null;
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         let currentMesh: AbstractMesh;
         let pathLine: LinesMesh;
         const getGroundPosition = function () {

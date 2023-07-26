@@ -46,19 +46,23 @@ for (const scene of scenes) {
       if (scene.renderCount) {
         await page.evaluate(() => {
           const raf = window.requestAnimationFrame;
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (window as any).renderCount = 0;
           window.requestAnimationFrame = (cb: FrameRequestCallback) => {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             (window as any).renderCount++;
             return raf(cb);
           };
         });
       }
       await page.waitForFunction(
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         () => (window as any).scene && (window as any).scene.isReady(),
         { timeout: 5000 }
       );
       // reset render count
       await page.evaluate(() => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (window as any).renderCount = 0;
       });
       // await page.waitForFunction(() => (window as any).renderCount === scene.renderCount || 1, { timeout: 5000 });
