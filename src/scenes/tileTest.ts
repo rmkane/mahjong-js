@@ -55,7 +55,7 @@ export class DefaultSceneWithTexture implements CreateSceneClass {
 
     // Light
     const light = new HemisphericLight("light", new Vector3(0, 0, 0), scene);
-    light.intensity = 0.9;
+    light.intensity = 0.8;
 
     const tile = await SceneLoader.ImportMeshAsync(
       "",
@@ -66,12 +66,23 @@ export class DefaultSceneWithTexture implements CreateSceneClass {
       ".glb"
     );
     tile.meshes[0].position.y = 0.63;
-    tile.meshes[0].rotation.y = Math.PI / 2;
-    //const tileMaterial = new PBRMaterial("tile material", scene);
-    const tileMaterial: PBRMaterial = tile.meshes[1].material as PBRMaterial;
-    tileMaterial.albedoTexture = new Texture(tileDiffuseTexture, scene);
+    tile.meshes[0].rotation = new Vector3(0.0, 0.0, 0.0); // Needed!
+
+    //const tileMaterial: PBRMaterial = tile.meshes[1].material as PBRMaterial;
+    //tileMaterial.albedoTexture = new Texture(tileDiffuseTexture, scene)
+
+    const tileMaterial = new PBRMaterial("tile material", scene);
+    tileMaterial.albedoTexture = new Texture(
+      tileDiffuseTexture,
+      scene,
+      undefined,
+      false
+    );
+    tileMaterial.metallic = 0; // Needed!
+    tileMaterial.roughness = 0; // Needed!
     //tileMaterial.bumpTexture = new Texture(tileBumpTexture, scene);
     //tile.meshes[0].material = tileMaterial;
+    tile.meshes[1].material = tileMaterial;
 
     const ground = CreateGround("ground", { width: 6, height: 6 }, scene);
     const groundMaterial = new StandardMaterial("ground material", scene);

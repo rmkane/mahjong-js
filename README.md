@@ -7,6 +7,11 @@ See:
 - <https://doc.babylonjs.com/setup/frameworkPackages/es6Support>
 - <https://github.com/RaananW/babylonjs-webpack-es6>
 
+## 3D axis
+
+- Babylon (Left hand rule) - X+ (left), Y+ (up), Z+ (away)
+- Blender (Right hand rule) - X+ (right), Y+ (away), Z+ (up)
+
 ## Primary scene
 
 See: [defaultWithTexture.ts](src/scenes/defaultWithTexture.ts)
