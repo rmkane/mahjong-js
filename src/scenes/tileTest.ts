@@ -69,7 +69,7 @@ export class DefaultSceneWithTexture implements CreateSceneClass {
     const envHelper = new EnvironmentHelper(
       {
         skyboxTexture: roomEnvironment,
-        createGround: false,
+        //createGround: false,
         groundYBias: 1,
       },
       scene
@@ -104,11 +104,11 @@ export class DefaultSceneWithTexture implements CreateSceneClass {
     //tile.meshes[0].material = tileMaterial;
     tile.meshes[1].material = tileMaterial;
 
-    const ground = CreateGround("ground", { width: 6, height: 6 }, scene);
-    const groundMaterial = new StandardMaterial("ground material", scene);
-    groundMaterial.diffuseTexture = new Texture(grassTextureUrl, scene);
-    ground.material = groundMaterial;
-    ground.receiveShadows = true;
+    //const ground = CreateGround("ground", { width: 6, height: 6 }, scene);
+    //const groundMaterial = new StandardMaterial("ground material", scene);
+    //groundMaterial.diffuseTexture = new Texture(grassTextureUrl, scene);
+    //ground.material = groundMaterial;
+    //ground.receiveShadows = true;
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const axes = new AxesViewer(

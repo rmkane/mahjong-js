@@ -20,7 +20,9 @@ See: [defaultWithTexture.ts](src/scenes/defaultWithTexture.ts)
 
 - Download 2K HDR: <https://polyhaven.com/a/entrance_hall>
 - Convert to ENV: <https://www.babylonjs.com/tools/ibl/>
-- Tiles: <https://www.shutterstock.com/image-vector/chinese-mahjong-has-variety-colors-1309204945?irclickid=wzhyMEVULxyNUBWyQD1Wr0DoUkFwqjWKQQRV0Q0&irgwc=1&utm_campaign=Eezy%2C%20LLC&utm_content=1636534&utm_medium=Affiliate&utm_source=38919&utm_term=www.vecteezy.com>
+- Tiles:
+  - <https://www.vecteezy.com/members/nightwolfdezines?utf8=%E2%9C%93&uploads_term=mahjong&sort_by=popular&uploads_content_type=all&license_type=all>
+  - <https://www.shutterstock.com/image-vector/chinese-mahjong-has-variety-colors-1309204945?irclickid=wzhyMEVULxyNUBWyQD1Wr0DoUkFwqjWKQQRV0Q0&irgwc=1&utm_campaign=Eezy%2C%20LLC&utm_content=1636534&utm_medium=Affiliate&utm_source=38919&utm_term=www.vecteezy.com>
 
 ## Babylon.js, webpack and es6 modules
 
