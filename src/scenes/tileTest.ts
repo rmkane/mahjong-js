@@ -12,13 +12,21 @@ import { CreateSceneClass } from "../createScene";
 import { Texture } from "@babylonjs/core/Materials/Textures/texture";
 import "@babylonjs/loaders/glTF";
 
+import roomEnvironment from "../../assets/staging/entrance_hall_2k.env";
+
 import tileModel from "../../assets/staging/tile.glb";
 import tileDiffuseTexture from "../../assets/staging/Tile Base UV Diffuse.png";
 import tileBumpTexture from "../../assets/staging/Tile UV Bump.png";
 
 import grassTextureUrl from "../../assets/grass.jpg";
 
-import { HemisphericLight, PBRMaterial, SceneLoader } from "@babylonjs/core";
+import {
+  CubeTexture,
+  EnvironmentHelper,
+  HemisphericLight,
+  PBRMaterial,
+  SceneLoader,
+} from "@babylonjs/core";
 
 export class DefaultSceneWithTexture implements CreateSceneClass {
   createScene = async (
@@ -54,8 +62,21 @@ export class DefaultSceneWithTexture implements CreateSceneClass {
     camera.wheelDeltaPercentage = 0.1;
 
     // Light
-    const light = new HemisphericLight("light", new Vector3(0, 0, 0), scene);
-    light.intensity = 0.8;
+    //const light = new HemisphericLight("light", new Vector3(0, 0, 0), scene);
+    //light.intensity = 0.8;
+
+    scene.environmentTexture = new CubeTexture(roomEnvironment, scene);
+    // if not setting the envtext of the scene, we have to load the DDS module as well
+    const envHelper = new EnvironmentHelper(
+      {
+        skyboxTexture: roomEnvironment,
+        createGround: false,
+        groundYBias: 1,
+      },
+      scene
+    );
+    envHelper.skybox!.scaling = new Vector3(10, 10, 10);
+    envHelper.skybox!.position = new Vector3(0, 100, 0);
 
     const tile = await SceneLoader.ImportMeshAsync(
       "",

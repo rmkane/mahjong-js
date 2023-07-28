@@ -16,6 +16,11 @@ See:
 
 See: [defaultWithTexture.ts](src/scenes/defaultWithTexture.ts)
 
+## Resources
+
+- Download 2K HDR: <https://polyhaven.com/a/entrance_hall>
+- Convert to ENV: <https://www.babylonjs.com/tools/ibl/>
+
 ## Babylon.js, webpack and es6 modules
 
 A Babylon.js sample project using typescript, latest babylon.js es6 core module, webpack 4 with webpack dev server, hot loading, eslint, vscode support and more.
