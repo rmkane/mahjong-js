@@ -66,7 +66,6 @@ export class DefaultSceneWithTexture implements CreateSceneClass {
     //light.intensity = 0.8;
 
     scene.environmentTexture = new CubeTexture(roomEnvironment, scene);
-    // if not setting the envtext of the scene, we have to load the DDS module as well
     const envHelper = new EnvironmentHelper(
       {
         skyboxTexture: roomEnvironment,
